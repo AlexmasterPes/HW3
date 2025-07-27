@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class HomeWork {
@@ -14,7 +15,6 @@ public class HomeWork {
             Configuration.browserSize = "1920x1080";
             Configuration.baseUrl = "https://demoqa.com";
             Configuration.pageLoadStrategy = "eager";
-            Configuration.holdBrowserOpen = true;
         }
 
         @Test
@@ -34,7 +34,7 @@ public class HomeWork {
             $("#lastName").setValue("Pesegov");
 
             //Пол
-            $("[for=gender-radio-1]").click();
+            $("#genterWrapper").$(byText("Male")).click();
 
             //Почта
             $("#userEmail").setValue("metallurgkras@mail.ru");
@@ -52,7 +52,7 @@ public class HomeWork {
             $("#subjectsInput").setValue("Economics").pressEnter();
 
             //Хобби
-            $("label[for='hobbies-checkbox-1']").click();
+            $("#hobbiesWrapper").$(byText("Sports")).click();
 
             //Изображение
             $("#uploadPicture").uploadFromClasspath("таблица.jpg");
