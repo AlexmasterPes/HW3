@@ -60,7 +60,7 @@ public class HomeWorkPO extends tests.TestBase {
     }
 
     @Test
-    void Negative() {
+    void negativeTest() {
         registrationPage.openPage()
                 .removeBanners()
                 // поле LastName пустое
